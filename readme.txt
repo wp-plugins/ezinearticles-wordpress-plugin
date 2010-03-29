@@ -4,7 +4,7 @@ Donate link: http://EzineArticles.com/
 Tags: submission, article marketing, ezine, ezinearticles
 Requires at least: 2.7
 Tested up to: 2.9.2
-Stable tag: trunk
+Stable tag: tags/1.5.2
 
 Submit your high quality, original WordPress posts directly to EzineArticles.com.
 
