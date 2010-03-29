@@ -6,6 +6,8 @@ Requires at least: 2.7
 Tested up to: 2.9.2
 Stable tag: trunk
 
+Submit your high quality, original WordPress posts directly to EzineArticles.com.
+
 == Description ==
 
 The EzineArticles WordPress Plugin allows you to submit your high quality, original WordPress posts to EzineArticles.com, 
