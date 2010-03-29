@@ -36,7 +36,7 @@ If you setup in 'advanced mode', you will be able to write to your plugins folde
 
 == ChangeLog ==
 
-1.5.2
+= 1.5.2 =
 
 * Added instructions to save draft before validation in order to avoid losing tags.
 * Support for users without a resource box.
