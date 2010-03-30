@@ -1,7 +1,7 @@
 === EzineArticles WordPress Plugin ===
 Contributors: EzineArticles.com
 Donate link: http://EzineArticles.com/
-Tags: submission, article marketing, ezine, ezinearticles
+Tags: article submission, articles, writers, writing, publishing, ezine, free articles, article directory, printable articles
 Requires at least: 2.7
 Tested up to: 2.9.2
 Stable tag: tags/1.5.2
@@ -14,25 +14,44 @@ The EzineArticles WordPress Plugin allows you to submit your high quality, origi
 as well as monitor their review status right from the WordPress administration interface!
 
 == Installation ==
+Prerequisites:
+WordPress 2.7 or higher
+PHP 5.1 or higher
 
-1. Upload `wp_ezinearticles` directory to the `/wp-content/plugins/` directory.
-2. Activate the plugin through the 'Plugins' menu in WordPress.
-3. Once activate, go to the new EzineArticles menu in the sidebar and click 'Options' to enter your EzineArticles API Key, Username and Password.
-4. Push the 'Save Settings' button to save your information.
+1. Download the plugin. There is a download button to the right.  
+2. Unzip the `wp_ezinearticles.zip` file.
+3. Upload `wp_ezinearticles` directory (not just the files in it) to the `/wp-content/plugins/` directory on your WordPress blog.
+4. Activate the plugin through the 'Plugins' menu in WordPress.
+5. Once activated, go to the new EzineArticles menu in the sidebar and click 'Options' to enter your EzineArticles API Key, Username and Password.
+6. Push the 'Save Settings' button to save your information.
 
-1, 2, 3: Installation Is Complete!
+Installation Is Complete!
 
 == Frequently Asked Questions ==
 
-= The plugin triggered a fatal error.
+= I have the plugin installed, how do I submit to EzineArticles? =
+
+When you add or edit a post, you will see a box labeled "WP EzineArticles" with a checkbox in it.  Click it to expand the additional fields required to submit to EzineArticles.
+
+= How can I resubmit an old post as an article on EzineArticles. =
+
+You can edit a post, open the "WP EzineArticles" box, set your settings, and then validate and submit.  Just make sure you dont push "publish" or you will change your previous post.
+
+= The plugin triggered a fatal error.=
 
 The first thing to check is that you have a recent version of php.  PHP version 5.1 or above is required to use this plugin.
 
-= I am unable to upload the plugin to Dreamhost.
+= I am unable to upload the plugin to Dreamhost.=
 
 You are not be able to upload the plugin to Dreamhost if you cannot write to the wp-content/plugins folder.  
 The basic 'easy mode' setup does not allow this because Dreamhost does not give you the correct permission to do so.
-If you setup in 'advanced mode', you will be able to write to your plugins folder, and should be able to install it.
+If you setup in 'advanced mode', you will be able to write to your plugins folder, and should be able to install custom plugins.
+
+== Screenshots ==
+
+1. Activating the plugin.
+2. Set your log in information and API key under Options.
+3. Check the checkbox on the 'WP Ezinearticles' box to publish your post.
 
 == ChangeLog ==
 
