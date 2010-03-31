@@ -13,17 +13,17 @@ define('WP_EA', 'WP EzineArticles');
 define('EA', 'EzineArticles');
 define('WP_EA_FOLDER', dirname(plugin_basename(__FILE__)), TRUE);
 define('WP_EA_PLUGIN_PATH', WP_CONTENT_URL . '/plugins/' . WP_EA_FOLDER);
-define('EA_AJAX', WP_EA_PLUGIN_PATH . '/inc/ajax.php');
+define('WP_EA_PLUGIN_ROOT',  ABSPATH . 'wp-content/plugins/' . WP_EA_FOLDER);
+define('WP_EA_PLUGIN_AJAX', WP_EA_PLUGIN_PATH . '/inc/ajax.php');
 define('MIN_PHP_VERSION', '5.1');
 define('MIN_WP_VERSION', '2.7');
-
 
 if( is_admin())
 {
 	register_activation_hook( __FILE__, 'ea_install');
 
-	include_once('inc/eaRemote.class.inc.php');
-	include_once('inc/ViewLoader.class.inc.php');
+	include_once(WP_EA_PLUGIN_ROOT . '/inc/eaRemote.class.inc.php');
+	include_once(WP_EA_PLUGIN_ROOT . '/inc/ViewLoader.class.inc.php');
 
 	add_action('admin_head', 'ea_assets');
 	add_action('admin_menu', 'ea_add_menu');

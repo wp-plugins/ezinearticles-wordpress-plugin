@@ -4,7 +4,7 @@ var $ = jQuery.noConflict();
 
 $(document).ready(function() {
 
-		var url = '<?php echo EA_AJAX?>';
+		var url = '<?php echo WP_EA_PLUGIN_AJAX?>';
 
 		$('#ea-resourcebox-text').text($('#ea-resourcebox option:selected').attr('label'));
 
@@ -84,7 +84,7 @@ $(document).ready(function() {
 function switchTrigger()
 {
 	$(document).ready(function() {
-		if ($('#ea-publish-wrap').is(":hidden")) 
+		if ($('#ea-publish-wrap').is(":hidden"))
 		{
 			$('#ea-publish-wrap').slideDown("normal");
 			$('#ea-publish-switch').attr('checked', true);
