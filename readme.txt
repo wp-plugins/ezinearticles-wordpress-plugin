@@ -33,15 +33,15 @@ Installation Is Complete!
 
 When you add or edit a post, you will see a box labeled "WP EzineArticles" with a checkbox in it.  Click it to expand the additional fields required to submit to EzineArticles.
 
-= How can I resubmit an old post as an article on EzineArticles. =
+= How can I resubmit an old post as an article on EzineArticles? =
 
 You can edit a post, open the "WP EzineArticles" box, set your settings, and then validate and submit.  Just make sure you dont push "publish" or you will change your previous post.
 
-= The plugin triggered a fatal error.=
+= The plugin triggered a fatal error =
 
 The first thing to check is that you have a recent version of php.  PHP version 5.1 or above is required to use this plugin.
 
-= I am unable to upload the plugin to Dreamhost.=
+= I am unable to upload the plugin to Dreamhost =
 
 You are not be able to upload the plugin to Dreamhost if you cannot write to the wp-content/plugins folder.  
 The basic 'easy mode' setup does not allow this because Dreamhost does not give you the correct permission to do so.
