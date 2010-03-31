@@ -4,7 +4,7 @@ Donate link: http://EzineArticles.com/
 Tags: article submission, articles, writers, writing, publishing, ezine, free articles, article directory, printable articles
 Requires at least: 2.7
 Tested up to: 2.9.2
-Stable tag: tags/1.5.2
+Stable tag: tags/1.6
 
 Submit your high quality, original WordPress posts directly to EzineArticles.com.
 
@@ -35,7 +35,11 @@ When you add or edit a post, you will see a box labeled "WP EzineArticles" with 
 
 = How can I resubmit an old post as an article on EzineArticles? =
 
-You can edit a post, open the "WP EzineArticles" box, set your settings, and then validate and submit.  Just make sure you dont push "publish" or you will change your previous post.
+You can edit a post, open the "WP EzineArticles" box, set your settings, and then "Validate" and "Submit".  If you do press "Publish", it will update your WordPress post.
+
+= I have changed my resource boxes on Members.ezinearticles.com, but they do not show up in WordPress. =
+
+In your WordPress admin page under "EzineArticles" click the "Account" tab, click "Refresh account status".
 
 = The plugin triggered a fatal error =
 
@@ -54,6 +58,15 @@ If you setup in 'advanced mode', you will be able to write to your plugins folde
 3. Check the checkbox on the 'WP Ezinearticles' box to publish your post.
 
 == ChangeLog ==
+
+= 1.6 =
+
+* Premium members can now schedule from WordPress.
+* Help menu added to the plugin.
+* Bugfix: Fixed dissappearing API key.
+* Bugfix: Fixed dissappearing options by using cookies. 
+* Bugfix: Fixed a date issue returning epoch time.
+* Bugfix: Improved code structure.
 
 = 1.5.2 =
 
