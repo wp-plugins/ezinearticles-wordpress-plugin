@@ -43,11 +43,13 @@ function ea_add_post_meta_box()
 
 function ea_add_menu()
 {
-	add_submenu_page(WP_EA_FOLDER, __('', WP_EA), __('Articles', WP_EA), 8, 'wp_ezinearticles', 'wp_ea_articles_view');
-	add_menu_page(EA,  EA, 8, WP_EA_FOLDER, 'wp_ezinearticles',  WP_CONTENT_URL . '/plugins/' . WP_EA_FOLDER . '/img/ea.png');
-	add_submenu_page(WP_EA_FOLDER, __('', WP_EA), __('Options', WP_EA), 8, 'wp_ezinearticles_options', 'wp_ea_options_view');
-	add_submenu_page(WP_EA_FOLDER, __('', WP_EA), __('Account', WP_EA), 8, 'wp_ezinearticles_account', 'wp_ea_account_view');
-	add_submenu_page(WP_EA_FOLDER, __('', WP_EA), __('Help', WP_EA), 8, 'wp_ezinearticles_help', 'wp_ea_help_view');
+
+	add_menu_page(EA,  EA, 6, 'wp_ezinearticles', 'wp_ezinearticles',  WP_CONTENT_URL . '/plugins/' . WP_EA_FOLDER . '/img/ea.png');
+	add_submenu_page('wp_ezinearticles', __('', WP_EA), __('Articles', WP_EA), 6, 'wp_ezinearticles', 'wp_ea_articles_view');
+	add_submenu_page('wp_ezinearticles', __('', WP_EA), __('Options', WP_EA), 6, 'wp_ezinearticles_options', 'wp_ea_options_view');
+	add_submenu_page('wp_ezinearticles', __('', WP_EA), __('Account', WP_EA), 6, 'wp_ezinearticles_account', 'wp_ea_account_view');
+	add_submenu_page('wp_ezinearticles', __('', WP_EA), __('Help', WP_EA), 8, 'wp_ezinearticles_help', 'wp_ea_help_view');
+
 }
 
 
