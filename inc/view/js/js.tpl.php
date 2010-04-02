@@ -6,7 +6,7 @@ $(document).ready(function() {
 
 		var url = '<?php echo WP_EA_PLUGIN_AJAX?>';
 
-		$('#ea-resourcebox-text').text($('#ea-resourcebox option:selected').attr('label'));
+		$('#ea-resourcebox-text').text($('#ea-resourcebox option:selected').val());
 
 		$('#ea-summary-options-edit').click(function() {
 
@@ -38,7 +38,7 @@ $(document).ready(function() {
 		});
 
 		$('#ea-resourcebox').change(function(){
-			$('#ea-resourcebox-text').text($('#ea-resourcebox option:selected').attr('label'));
+			$('#ea-resourcebox-text').text($('#ea-resourcebox option:selected').val());
 			return false;
 		});
 

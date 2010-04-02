@@ -4,7 +4,7 @@ Donate link: http://EzineArticles.com/
 Tags: article submission, articles, writers, writing, publishing, ezine, free articles, article directory, printable articles
 Requires at least: 2.7
 Tested up to: 2.9.2
-Stable tag: tags/1.6
+Stable tag: tags/1.6.2
 
 Submit your high quality, original WordPress posts directly to EzineArticles.com.
 
@@ -18,11 +18,36 @@ Prerequisites:
 WordPress 2.7 or higher
 PHP 5.1 or higher
 
+FTP install directions
+
+1. Log into your WordPress admin area.  It should be at yourblogaddress/wp-admin/
+
+2. Expand on the "Plugins" entry under your dashboard and click on "add new".
+
+3. Search the plugins for "ezinearticles".
+
+4. You will see a list of plugins, look for "EzineArticles WordPress Plugin" and click the install link.
+
+5. If wordpress requires information for ftp, it will request it from you.  If not, it will install our plugin and link you to page where you can activate the plugin.
+
+6. Activate the plugin.
+
+7. Once activated, go to the new EzineArticles menu in the sidebar and click 'Options' to enter your EzineArticles API Key, Username and Password.
+
+8. Push the 'Save Settings' button to save your information.
+
+Alternate install directions
+
 1. Download the plugin. There is a download button to the right.  
+
 2. Unzip the `wp_ezinearticles.zip` file.
+
 3. Upload `wp_ezinearticles` directory (not just the files in it) to the `/wp-content/plugins/` directory on your WordPress blog.
+
 4. Activate the plugin through the 'Plugins' menu in WordPress.
+
 5. Once activated, go to the new EzineArticles menu in the sidebar and click 'Options' to enter your EzineArticles API Key, Username and Password.
+
 6. Push the 'Save Settings' button to save your information.
 
 Installation Is Complete!
@@ -53,11 +78,22 @@ If you setup in 'advanced mode', you will be able to write to your plugins folde
 
 == Screenshots ==
 
-1. Activating the plugin.
-2. Set your log in information and API key under Options.
-3. Check the checkbox on the 'WP Ezinearticles' box to publish your post.
+1. To add a new plugin, search for ezinearticles.
+2. Find "EzineArticles WordPress Plugin" and click "install".
+3. Click the "Install Now" button.
+4. Activate the plugin after install.
+5. Or activate in the plugin menu.
+6. Set you API Key, EzineArticles Username, and EzineArticles Password under Options.
+7. Check the checkbox on the 'WP Ezinearticles' box to publish your post.
 
 == ChangeLog ==
+
+= 1.6.2 =
+
+* Improved instructions.
+* Bugfix: Found an extra div tag that would prevent the page from rendering on the left side when invalid account information was used.
+* Bugfix: Webkit based browsers would show the text of the Signature box where the name was.
+* Bugfix: Non alphanumeric passwords now supported.
 
 = 1.6 =
 

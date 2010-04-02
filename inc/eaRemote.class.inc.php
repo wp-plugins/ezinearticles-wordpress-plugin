@@ -28,6 +28,22 @@ class eaRemote{
 
 	}
 
+	/* a different post method for the posts that are searching the api */
+	static function postSearch($method, $with = null)
+	{
+		// post as array
+
+		$post_query = array_merge( array('search'=>$method), (array)$with, self::common_vars($method));
+
+		$s = new Snoopy();
+
+		$s->submit(self::$API, $post_query);
+
+		$results = unserialize($s->results);
+
+		return $results[$method];
+	}
+
 	/* in as array */
 	static function post($method, $with = null)
 	{

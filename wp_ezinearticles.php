@@ -3,7 +3,7 @@
 Plugin Name: WP EzineArticles
 Plugin URI: http://EzineArticles.com/
 Description: The EzineArticles WordPress Plugin allows you to submit your high quality, original WordPress posts to EzineArticles.com, as well as monitor their review status right from the WordPress administration interface!
-Version: 1.6
+Version: 1.6.2
 Author: EzineArticles.com
 Author URI: http://EzineArticles.com/
 */
@@ -74,7 +74,7 @@ function wp_ezinearticles()
 	{
 		foreach($results as $result)
 		{
-			$article_results = eaRemote::get('account.article.view', array('article_id' => $result->article_id));
+			$article_results = eaRemote::postSearch('account.article.view', array('article_id' => $result->article_id));
 			if($article_results[0])
 			{
 				$articlelist[$result->post_id] = $article_results[0];
@@ -89,8 +89,8 @@ function wp_ea_account_view()
 
 	if($_POST['refresh_account_status'])
 	{
-		$ea_options['ea_categories'] = eaRemote::get('categories');
-		$ea_options['ea_account_status'] = eaRemote::get('account.status');
+		$ea_options['ea_categories'] = eaRemote::postSearch('categories');
+		$ea_options['ea_account_status'] = eaRemote::postSearch('account.status');
 		$ea_options = array_merge(ea_current_options(), $ea_options);
 		update_option('ezinearticles_options', $ea_options);
 	}
@@ -108,8 +108,8 @@ function wp_ea_options_view()
 		$ea_options['ea_email'] = $_POST['ea_email'];
 		$ea_options['ea_password'] = $_POST['ea_password'];
 
-		$ea_options['ea_categories'] = eaRemote::get('categories');
-		$ea_options['ea_account_status'] = eaRemote::get('account.status', true);
+		$ea_options['ea_categories'] = eaRemote::postSearch('categories');
+		$ea_options['ea_account_status'] = eaRemote::postSearch('account.status', true);
 
 		$ea_options = array_merge(ea_current_options(), $ea_options);
 
@@ -131,7 +131,7 @@ function wp_ea_options_view()
 
 function wp_ea_help_view()
 {
-	ViewLoader::load("Help", null);
+	ViewLoader::load("Help", array());
 }
 
 
