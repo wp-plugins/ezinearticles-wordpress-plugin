@@ -3,7 +3,7 @@
 Plugin Name: WP EzineArticles
 Plugin URI: http://EzineArticles.com/
 Description: The EzineArticles WordPress Plugin allows you to submit your high quality, original WordPress posts to EzineArticles.com, as well as monitor their review status right from the WordPress administration interface!
-Version: 1.6.2
+Version: 1.6.5
 Author: EzineArticles.com
 Author URI: http://EzineArticles.com/
 */
@@ -154,7 +154,7 @@ function wp_ea_post_meta_box_view()
 function ea_message($message, $class = 'updated')
 {
 	global $post;
-	//this switches the no excerpt message
+
 	ViewLoader::load('EAMessage',array("ea_message"=>$message, "ea_class"=>$class, "ea_post"=>$post),"part/");
 }
 
@@ -206,10 +206,10 @@ function getResourceBoxSelect()
 
 	$selectedResource = null;
 	if (isset($_COOKIE['ea_resource']))
-        {
+    	{
 		$selectedResource = $_COOKIE['ea_resource'];
 		$selectedResourceText = $_COOKIE['ea_resourcebox_text'];
-        }
+    	}
 
 	ViewLoader::load('ResourceBoxDropdown',array("ea_account_status"=>$account_status,"selected_text"  => $selectedResourceText ,"selected_resource_box"=>$selectedResource),"part/");
 	return true;

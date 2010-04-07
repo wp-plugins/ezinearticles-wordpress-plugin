@@ -64,7 +64,6 @@
 	}
 
 
-
 function ea_log($details)
 {
 	global $wpdb;
@@ -91,25 +90,21 @@ function ea_set_cookies()
 
     $category = explode(':', $_REQUEST['ea_category']);
     if($category[1] && $category[1] != '')
-    {
-            $category = $category[1];
-    } else {
-            $category = $category[0];
-    }
+    	$category = $category[1];
+    else
+		$category = $category[0];
 
 	setcookie('ea_author', $_REQUEST['ea_author'], 0, COOKIEPATH, COOKIE_DOMAIN);
-    setcookie("ea_category",  $category, 0, COOKIEPATH, COOKIE_DOMAIN);
-    setcookie('ea_resource', $_REQUEST['ea_resourcebox'], 0, COOKIEPATH, COOKIE_DOMAIN);
-    setcookie('ea_resourcebox_text', $_REQUEST['ea_resourcebox_text'], 0, COOKIEPATH, COOKIE_DOMAIN);
+	setcookie("ea_category",  $category, 0, COOKIEPATH, COOKIE_DOMAIN);
+	setcookie('ea_resource', $_REQUEST['ea_resourcebox'], 0, COOKIEPATH, COOKIE_DOMAIN);
+	setcookie('ea_resourcebox_text', $_REQUEST['ea_resourcebox_text'], 0, COOKIEPATH, COOKIE_DOMAIN);
 
 
 }
 
 function getSummaryFromPostContent($content)
 {
-
 	preg_match('/^([^.!?]*[\.!?]+){0,2}/', strip_tags($content), $summary);
-
 	return $summary[0];
 }
 

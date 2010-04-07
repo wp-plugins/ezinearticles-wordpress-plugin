@@ -1,15 +1,16 @@
 
 <br/><select name="ea_resourcebox" id="ea-resourcebox">
-<?php 
+<?php
+
 foreach($ea_account_status as $ea_index => $ea_temp_status)
 {
 	foreach($ea_temp_status as $ea_resource_box_key => $ea_resource_box_value)
 	{
 		if($ea_resource_box_key == "resource")
 		{
-			if ($selected_resource_box == $ea_resource_box_value['name'] && $selected_resource_box!=null)
+			if ($selected_resource_box == $ea_resource_box_value['body'] && $selected_resource_box!=null)
 			{
-				?><option selected="selected" label="<?php echo $ea_resource_box_value['name']?>" value="<?php echo $selected_text ?><?php echo $ea_resource_box_value['name']?>"><?php echo $ea_resource_box_value['name']?></option><?php
+				?><option label="<?php echo $ea_resource_box_value['name']?>" value="<?php echo $selected_text ?>" selected="selected"><?php echo $ea_resource_box_value['name']?></option><?php
 			}
 			else
 			{
@@ -17,5 +18,7 @@ foreach($ea_account_status as $ea_index => $ea_temp_status)
 			}
 		}
 	}
-}?>
+}
+
+?>
 </select>

@@ -32,13 +32,13 @@ if(!$ea_account_status)
 </div>
 
 <div class="misc-pub-section">
-	<span>Signature:</span>
+	<span>Resource Box:</span>
 	<?php $hasResourceBoxes = getResourceBoxSelect() ?><a id="ea-resourcebox-options-edit" href="#ea-resourcebox-options">Edit</a>
 	<div id="ea-resourcebox-options-wrap" style="display:none;">
 		<?php if ($hasResourceBoxes || $edited_resource_text):?>
-		Signature Body:<br />
+		Resource Body:<br />
 		<?php else:?>
-		<p class="howto">Enter Your New Signature Here:</p>
+		<p class="howto">Enter Your New Resource Here:</p>
 		<?php endif;?>
 		<textarea name="ea_resourcebox_text" id="ea-resourcebox-text"><?php
 		if(isset($_COOKIE['ea_resourcebox_text']))
@@ -125,13 +125,11 @@ Scheduled Release
 <div align="center"><small><a href="http://EzineArticles.com/premium/" title="Click to find out how to become a Premium Member." target="_blank">This feature is available to Premium Members</a></small></div>
 </div>
 <?php }?>
-<div class="misc-pub-section">
+<div class="misc-pub-section-last">
 	<div id="minor-publishing-actions">
 		<input id="ea-validate-post" class="button button-highlighted" type="button" value="Validate" name="ea_do_validate" title="Checks the article for rejectable content">
 		<input id="ea-publish-post" class="button-primary" type="button" value="Submit" name="ea_do_publish" title="Submits to EzineArticles.com, does not publish to WordPress">
 	</div>
 </div>
-<div class="misc-pub-section clear center misc-pub-section-last">
-	Please save as a draft before validating.
-</div>
+
 </div>

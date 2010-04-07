@@ -4,7 +4,7 @@ Donate link: http://EzineArticles.com/
 Tags: article submission, articles, writers, writing, publishing, ezine, free articles, article directory, printable articles
 Requires at least: 2.7
 Tested up to: 2.9.2
-Stable tag: tags/1.6.2
+Stable tag: tags/1.6.5
 
 Submit your high quality, original WordPress posts directly to EzineArticles.com.
 
@@ -87,6 +87,12 @@ If you setup in 'advanced mode', you will be able to write to your plugins folde
 7. Check the checkbox on the 'WP Ezinearticles' box to publish your post.
 
 == ChangeLog ==
+
+= 1.6.5 =
+
+* No longer need to click 'Save Draft' before validation.
+* Updated help section.
+* Bugfix: Was not displaying customized Resource Box text after validation.
 
 = 1.6.2 =
 
