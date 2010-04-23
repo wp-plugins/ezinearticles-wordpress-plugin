@@ -4,7 +4,7 @@ Donate link: http://EzineArticles.com/
 Tags: article submission, articles, writers, writing, publishing, ezine, free articles, article directory, printable articles
 Requires at least: 2.7
 Tested up to: 2.9.2
-Stable tag: tags/1.6.5
+Stable tag: tags/2.0.0
 
 Submit your high quality, original WordPress posts directly to EzineArticles.com.
 
@@ -16,7 +16,7 @@ as well as monitor their review status right from the WordPress administration i
 == Installation ==
 Prerequisites:
 WordPress 2.7 or higher
-PHP 5.1 or higher
+PHP 4.3 or higher
 
 FTP install directions
 
@@ -32,7 +32,7 @@ FTP install directions
 
 6. Activate the plugin.
 
-7. Once activated, go to the new EzineArticles menu in the sidebar and click 'Options' to enter your EzineArticles API Key, Username and Password.
+7. Once activated, go to the new EzineArticles menu in the sidebar and click 'Account' to enter your EzineArticles Username and Password.
 
 8. Push the 'Save Settings' button to save your information.
 
@@ -46,7 +46,7 @@ Alternate install directions
 
 4. Activate the plugin through the 'Plugins' menu in WordPress.
 
-5. Once activated, go to the new EzineArticles menu in the sidebar and click 'Options' to enter your EzineArticles API Key, Username and Password.
+5. Once activated, go to the new EzineArticles menu in the sidebar and click 'Account' to enter your EzineArticles Username and Password.
 
 6. Push the 'Save Settings' button to save your information.
 
@@ -56,19 +56,23 @@ Installation Is Complete!
 
 = I have the plugin installed, how do I submit to EzineArticles? =
 
-When you add or edit a post, you will see a box labeled "WP EzineArticles" with a checkbox in it.  Click it to expand the additional fields required to submit to EzineArticles.
+When you add or edit a post, you will see a box labeled "WP EzineArticles" in it. It contains the additional fields required to submit to EzineArticles. Make sure they are filled out and then push the validate button.  Fix any errors that appear and when you are ready push the submit button.
 
 = How can I resubmit an old post as an article on EzineArticles? =
 
-You can edit a post, open the "WP EzineArticles" box, set your settings, and then "Validate" and "Submit".  If you do press "Publish", it will update your WordPress post.
+You can edit a post, set your EzineArticles settings, and then "Validate" and "Submit".  If you do press "Publish", it will update your WordPress post.
 
-= I have changed my resource boxes on Members.ezinearticles.com, but they do not show up in WordPress. =
+= I can't see any categories. =
 
-In your WordPress admin page under "EzineArticles" click the "Account" tab, click "Refresh account status".
+Try refreshing the page. Categories are now pulled from EzineArticles rather than stored locally, and it may need to refresh.
 
-= The plugin triggered a fatal error =
+= The plugin triggered an error =
 
-The first thing to check is that you have a recent version of php.  PHP version 5.1 or above is required to use this plugin.
+First check your php version. PHP version 4.3 or above is required, with newer being better.  If that is up to date, see if you can figure out what the error was by looking at the log for your webserver.  Any feedback on bugs will help us develop the next version.
+
+= Wordpress MU =
+
+Multiuser WordPress is not compatable with this plugin.
 
 = I am unable to upload the plugin to Dreamhost =
 
@@ -83,10 +87,22 @@ If you setup in 'advanced mode', you will be able to write to your plugins folde
 3. Click the "Install Now" button.
 4. Activate the plugin after install.
 5. Or activate in the plugin menu.
-6. Set you API Key, EzineArticles Username, and EzineArticles Password under Options.
-7. Check the checkbox on the 'WP Ezinearticles' box to publish your post.
+6. Set your EzineArticles Username and Password under Account.
+7. When you have everything working, you will be able to submit an article.
 
 == ChangeLog ==
+
+= 2.0.0 =
+
+* Rewrote code to support PHP 4.3
+* New AJAX code should preserve settings more reliably.
+* Added more detailed user messages for password and user name validation.
+* Added ability to automatically request an api key with your username and password.
+* Merged Accounts and Options pages.
+* Condensed php for more reliable distribution.
+* Changed naming scheme to avoid conflicts with other plugins.
+* Help now allows the user to send an email with details of their problem.
+* Bugfixes
 
 = 1.6.5 =
 
