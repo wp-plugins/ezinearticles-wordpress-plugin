@@ -3,7 +3,7 @@
 Plugin Name: WP EzineArticles
 Plugin URI: http://EzineArticles.com/
 Description: The EzineArticles WordPress Plugin allows you to submit your high quality, original WordPress posts to EzineArticles.com, as well as monitor their review status right from the WordPress administration interface!
-Version: 2.0.0
+Version: 2.0.1
 Author: EzineArticles.com
 Author URI: http://EzineArticles.com/
 */
@@ -13,7 +13,7 @@ define('WP_EZINEARTICLES_PLUGIN_NAME', 'WP EzineArticles');
 define('WP_EZINEARTICLES_NAME', 'EzineArticles');
 define('WP_EZINEARTICLES_GENERAL_OPTION_NAME', 'ezinearticles_options');
 
-define('WP_EZINEARTICLES_PLUGIN_VERSION', '2.0.0');
+define('WP_EZINEARTICLES_PLUGIN_VERSION', '2.0.1');
 define('WP_EZINEARTICLES_MIN_PHP_VERSION', '4.3');
 define('WP_EZINEARTICLES_MIN_WP_VERSION', '2.7');
 
@@ -1492,8 +1492,10 @@ function wp_ezinearticles_js()
 				show_message('Please save a draft of your article before continuing.', 'error');
 				return;
 			}
+
+			if (flag != 2)
+				autosave();
 			
-			autosave();
 			toggle_buttons();
 			
 			if (!flag)

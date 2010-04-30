@@ -92,6 +92,10 @@ If you setup in 'advanced mode', you will be able to write to your plugins folde
 
 == ChangeLog ==
 
+= 2.0.1 =
+
+* Fixed javascript error preventing publishing to user's blog.
+
 = 2.0.0 =
 
 * Rewrote code to support PHP 4.3
