@@ -3,7 +3,7 @@
 Plugin Name: WP EzineArticles
 Plugin URI: http://EzineArticles.com/
 Description: The EzineArticles WordPress Plugin allows you to submit your high quality, original WordPress posts to EzineArticles.com, as well as monitor their review status right from the WordPress administration interface!
-Version: 2.0.1
+Version: 2.0.2
 Author: EzineArticles.com
 Author URI: http://EzineArticles.com/
 */
@@ -13,7 +13,7 @@ define('WP_EZINEARTICLES_PLUGIN_NAME', 'WP EzineArticles');
 define('WP_EZINEARTICLES_NAME', 'EzineArticles');
 define('WP_EZINEARTICLES_GENERAL_OPTION_NAME', 'ezinearticles_options');
 
-define('WP_EZINEARTICLES_PLUGIN_VERSION', '2.0.1');
+define('WP_EZINEARTICLES_PLUGIN_VERSION', '2.0.2');
 define('WP_EZINEARTICLES_MIN_PHP_VERSION', '4.3');
 define('WP_EZINEARTICLES_MIN_WP_VERSION', '2.7');
 
@@ -955,9 +955,11 @@ function wp_ezinearticles_submit()
 
 	global $wpdb;
 
+	$content = strip_shortcodes($_REQUEST['content']);
+
 	$post_id = $_REQUEST['post_ID'];
 
-	$summary = ($_REQUEST['ea_summary'] == 'use_excerpt') ? $_REQUEST['excerpt'] : wp_ezinearticles_get_summary_from_post_content($_REQUEST['content']);
+	$summary = ($_REQUEST['ea_summary'] == 'use_excerpt') ? $_REQUEST['excerpt'] : wp_ezinearticles_get_summary_from_post_content($content);
 
 	if($_REQUEST['ezinearticles_keyword'] == 'use_post_tags')
 	{
@@ -969,7 +971,7 @@ function wp_ezinearticles_submit()
 	}
 
 	$submit['title'] = stripslashes($_REQUEST['post_title']);
-	$submit['body']= stripslashes($_REQUEST['content']);
+	$submit['body']= stripslashes($content);
 	$submit['author']= stripslashes($_REQUEST['ea_author']);
 	$submit['category']= $_REQUEST['ezinearticles_category'];
 	$submit['summary']= stripslashes($summary);
