@@ -4,7 +4,7 @@ Donate link: http://EzineArticles.com/
 Tags: article submission, articles, writers, writing, publishing, ezine, free articles, article directory, printable articles
 Requires at least: 2.7
 Tested up to: 2.9.2
-Stable tag: tags/2.0.1
+Stable tag: tags/2.0.2
 
 Submit your high quality, original WordPress posts directly to EzineArticles.com.
 
@@ -91,6 +91,10 @@ If you setup in 'advanced mode', you will be able to write to your plugins folde
 7. When you have everything working, you will be able to submit an article.
 
 == ChangeLog ==
+
+= 2.0.2 =
+
+* Now stripping WordPress ShortCodes from post content
 
 = 2.0.1 =
 
