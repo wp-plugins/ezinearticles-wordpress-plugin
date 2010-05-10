@@ -94,7 +94,7 @@ If you setup in 'advanced mode', you will be able to write to your plugins folde
 
 = 2.0.2 =
 
-* Now stripping WordPress Shortcodes when in post content
+* Now stripping WordPress ShortCodes from post content
 
 = 2.0.1 =
 
