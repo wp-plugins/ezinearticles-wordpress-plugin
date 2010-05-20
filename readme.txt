@@ -66,6 +66,10 @@ You can edit a post, set your EzineArticles settings, and then "Validate" and "S
 
 Try refreshing the page. Categories are now pulled from EzineArticles rather than stored locally, and it may need to refresh.
 
+= The plugin hangs when trying to contact =
+
+Your firewall may be dropping outgoing requests between your webserver and api.ezinearticles.com.  When you install the plugin it will display an error if the server could not be contacted.
+
 = The plugin triggered an error =
 
 First check your php version. PHP version 4.3 or above is required, with newer being better.  If that is up to date, see if you can figure out what the error was by looking at the log for your webserver.  Any feedback on bugs will help us develop the next version.
@@ -91,6 +95,11 @@ If you setup in 'advanced mode', you will be able to write to your plugins folde
 7. When you have everything working, you will be able to submit an article.
 
 == ChangeLog ==
+
+= 2.0.3 =
+
+* When installing the plugin it checks to make sure the api can be reached.  
+If it cannot the plugin will still install, but it will warn the user.
 
 = 2.0.2 =
 

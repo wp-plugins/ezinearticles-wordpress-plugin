@@ -13,7 +13,7 @@ define('WP_EZINEARTICLES_PLUGIN_NAME', 'WP EzineArticles');
 define('WP_EZINEARTICLES_NAME', 'EzineArticles');
 define('WP_EZINEARTICLES_GENERAL_OPTION_NAME', 'ezinearticles_options');
 
-define('WP_EZINEARTICLES_PLUGIN_VERSION', '2.0.2');
+define('WP_EZINEARTICLES_PLUGIN_VERSION', '2.0.3');
 define('WP_EZINEARTICLES_MIN_PHP_VERSION', '4.3');
 define('WP_EZINEARTICLES_MIN_WP_VERSION', '2.7');
 
@@ -849,9 +849,39 @@ function wp_ezinearticles_install()
 		}
 		$wpdb->query("DROP TABLE IF EXISTS wp_ezinearticles");
 	}
-
+	$connectionMessage = wp_ezinearticles_connection_test();
+	if ($connectionMessage != null)
+	{
+		wp_ezinearticles_log_event($connectionMessage, "activate");
+		wp_ezinearticles_message($connectionMessage, 'error');
+		//echo($connectionMessage);
+		exit();
+	}
 	wp_ezinearticles_log_event( "Setup at time of activation:\n\n" . wp_ezinearticles_get_setup_info(), 'activate');
 }
+
+/**
+ * returns null if all is ok, else return an error. 
+ */
+function wp_ezinearticles_connection_test()
+{
+	$s = new Snoopy();
+	$s->read_timeout = 5;
+	$s->submit('http://api.ezinearticles.com/api.php');
+	$results = print_r($s->results,true);
+	error_log("\n".$results."\n");
+	if(isset($results) && strlen($results))
+	{
+		error_log("<br>"."connection succeded"."<br>");
+		return null;
+	}
+	else
+		return "<b>Could not contact the EzineArticles.com submission interface.  Possible causes include:<br>
+		* A firewall may be blocking the server from making outbound requests to http://api.ezinearticles.com/.<br>
+		* PHP may not be allowed to open connections on your server.<br>
+		* http://api.ezinearticles.com/ may be experiencing downtime.";
+}
+
 
 function wp_ezinearticles_deactivate()
 {
