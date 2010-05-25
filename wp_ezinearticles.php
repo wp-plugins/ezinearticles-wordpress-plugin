@@ -3,7 +3,7 @@
 Plugin Name: WP EzineArticles
 Plugin URI: http://EzineArticles.com/
 Description: The EzineArticles WordPress Plugin allows you to submit your high quality, original WordPress posts to EzineArticles.com, as well as monitor their review status right from the WordPress administration interface!
-Version: 2.0.3
+Version: 2.0.4
 Author: EzineArticles.com
 Author URI: http://EzineArticles.com/
 */
@@ -13,7 +13,7 @@ define('WP_EZINEARTICLES_PLUGIN_NAME', 'WP EzineArticles');
 define('WP_EZINEARTICLES_NAME', 'EzineArticles');
 define('WP_EZINEARTICLES_GENERAL_OPTION_NAME', 'ezinearticles_options');
 
-define('WP_EZINEARTICLES_PLUGIN_VERSION', '2.0.3');
+define('WP_EZINEARTICLES_PLUGIN_VERSION', '2.0.4');
 define('WP_EZINEARTICLES_MIN_PHP_VERSION', '4.3');
 define('WP_EZINEARTICLES_MIN_WP_VERSION', '2.7');
 
@@ -475,7 +475,7 @@ function wp_ezinearticles_help_view()
 		<?php wp_ezinearticles_message( __('An email has been sent to the EzineArticles.com Support team.') ); ?>
 	<?php endif; ?>
 	<form action="" method="POST">
-		<p><?php _e('If you are having problems with the plugin you can send an email to the support team at EzineArticles.com.') ?></p>
+		<p><?php _e('If you are having problems with the plugin you can send an email to our Member Support Team at EzineArticles.com.') ?></p>
 		<p>
 			<fieldset>
 				<legend><?php _e('Description') ?>:</legend>
@@ -869,10 +869,8 @@ function wp_ezinearticles_connection_test()
 	$s->read_timeout = 5;
 	$s->submit('http://api.ezinearticles.com/api.php');
 	$results = print_r($s->results,true);
-	error_log("\n".$results."\n");
 	if(isset($results) && strlen($results))
 	{
-		error_log("<br>"."connection succeded"."<br>");
 		return null;
 	}
 	else
