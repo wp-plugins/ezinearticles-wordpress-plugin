@@ -3,7 +3,7 @@
 Plugin Name: WP EzineArticles
 Plugin URI: http://EzineArticles.com/
 Description: The EzineArticles WordPress Plugin allows you to submit your high quality, original WordPress posts to EzineArticles.com, as well as monitor their review status right from the WordPress administration interface!
-Version: 2.0.4
+Version: 2.0.5
 Author: EzineArticles.com
 Author URI: http://EzineArticles.com/
 */
@@ -13,7 +13,7 @@ define('WP_EZINEARTICLES_PLUGIN_NAME', 'WP EzineArticles');
 define('WP_EZINEARTICLES_NAME', 'EzineArticles');
 define('WP_EZINEARTICLES_GENERAL_OPTION_NAME', 'ezinearticles_options');
 
-define('WP_EZINEARTICLES_PLUGIN_VERSION', '2.0.4');
+define('WP_EZINEARTICLES_PLUGIN_VERSION', '2.0.5');
 define('WP_EZINEARTICLES_MIN_PHP_VERSION', '4.3');
 define('WP_EZINEARTICLES_MIN_WP_VERSION', '2.7');
 
@@ -229,7 +229,7 @@ function wp_ezinearticles_account_view()
 			{
 				$errorPlainText = $accStat["error"];
 				wp_ezinearticles_log_event("Obtaining account status from the api returned an error: ".$errorPlainText);
-				
+
 			}
 			else $errorPlainText = null;
 			$ea_options['ea_error'] = $errorPlainText;
@@ -299,7 +299,7 @@ function wp_ezinearticles_account_view()
 					<br />
 					<?php _e('Enter your EzineArticles Membership Account username (email).') ?><br />
 					<?php _e(' If you are not yet a member of EzineArticles.com, ') ?>
-					<a target="_blank" href="http://ezinearticles.com/submit/"><?php _e('Click Here') ?></a> 
+					<a target="_blank" href="http://ezinearticles.com/submit/"><?php _e('Click Here') ?></a>
 					<?php _e('for') ?><br />
 					<?php _e('your FREE  Basic Membership Account.') ?>
 				</small>
@@ -361,9 +361,9 @@ function wp_ezinearticles_account_view()
 //This displays the help tab
 function wp_ezinearticles_help_view()
 {
-	
+
 	$logged_events = wp_ezinearticles_get_logged_events();
-	
+
 	$debug_message_sent = false;
 	if(isset($_POST['ezinearticles_debug_message'] ))
 	{
@@ -374,13 +374,13 @@ function wp_ezinearticles_help_view()
 			if(isset($_POST['ezinearticles_send_event_log']))
 			{
 				$message .= "\n\n------------\n Event Log:\n------------\n";
-				
+
 				foreach($logged_events as $event)
 				{
 					$message .= "Date: {$event['date']}\nType: {$event['type']}\nDetails: {$event['details']}\n\n";
 				}
 			}
-			
+
 			wp_ezinearticles_send_debug_email($message);
 			$debug_message_sent = true;
 		}
@@ -389,9 +389,9 @@ function wp_ezinearticles_help_view()
 			wp_ezinearticles_message('Please enter a description of your problem.', 'error');
 		}
 	}
-	
-	
-	
+
+
+
 	?>
 <div class="wrap">
 	<h2><?php echo WP_EZINEARTICLES_PLUGIN_NAME; ?> - <?php _e('Help') ?></h2>
@@ -409,39 +409,39 @@ function wp_ezinearticles_help_view()
 	</p>
 	<ul>
 		<li>
-			<b><?php _e('Title') ?></b> - 
+			<b><?php _e('Title') ?></b> -
 			<?php _e('You must choose a unique title.  Validation will tell you if it has been used before.') ?>
 		</li>
 		<li>
-			<b><?php _e('Body') ?></b> - 
+			<b><?php _e('Body') ?></b> -
 			<?php _e('Your body will be taken from the body of your post.  You will most likely need to alter this to pass validation.') ?>
 		</li>
 		<li>
-			<b><?php _e('Category') ?></b> - 
+			<b><?php _e('Category') ?></b> -
 			<?php _e('You must select a category for the article from the drop down list.') ?>
 		</li>
 		<li>
-			<b><?php _e('Authors') ?></b> - 
+			<b><?php _e('Authors') ?></b> -
 			<?php _e('The author drop down should have a list of authors under your EzineArticles account.  Select the one you want to use.') ?>
 		</li>
 		<li>
-			<b><?php _e('Resource Box') ?></b> - 
+			<b><?php _e('Resource Box') ?></b> -
 			<?php _e('The resource box drop down will contain a list of resource boxes you have saved in your EzineArticles account.') ?>
 			<?php _e('Selecting one and pushing edit will allow you to edit it for the next submit.') ?>
 			<?php _e('This box is meant for tweaking for a specific article and will not replace the one stored in your EzineArticles account.') ?>
 			<?php _e('There is currently no way to permanently overwrite your resource box from WordPress, you will need to log in to your account at http://Members.EzineArticles.com/ to do that.') ?>
 		</li>
 		<li>
-			<b><?php _e('Summary') ?></b> - 
+			<b><?php _e('Summary') ?></b> -
 			<?php _e('Allows you to choose whether the excerpt or the first two sentences of the body is used for the summary.') ?>
 		</li>
 		<li>
-			<b><?php _e('Keywords') ?></b> - 
+			<b><?php _e('Keywords') ?></b> -
 			<?php _e('Allows you to choose whether you want Custom Keywords or to use the Post tags. Post Tags are converted into keywords for EzineArticles.  You will need to add tags in the Post Tags Field.') ?>
 			<?php _e('By using Custom Keywords, you can enter different keywords for your EzineArticle by entering them with commas separating each keyword.') ?>
 		</li>
 		<li>
-			<b><?php _e('Schedule') ?></b> - 
+			<b><?php _e('Schedule') ?></b> -
 			<?php _e('If you have a premium account you can schedule the release date on EzineArticles. You can schedule the release on the wordpress blog separately in the Publish window.') ?>
 		</li>
 	</ul>
@@ -449,7 +449,7 @@ function wp_ezinearticles_help_view()
 	<hr>
 	<h3><?php _e('3) Validate your Article') ?></h3>
 	<p>
-		<b><?php _e('Validate') ?></b> - 
+		<b><?php _e('Validate') ?></b> -
 		<?php _e('Validates your article against the EzineArticles Editorial Guidelines. It will tell you if there are any parts of your article that would cause it to be automatically rejected.') ?>
 		<?php _e('You will see a box appear at the bottom of the WP EzineArticles tab with the details of any problems that were encountered.  If you still want these in your WordPress version, ') ?>
 		<?php _e('you should publish for WordPress, edit it, and then submit it to EzineArticles.') ?>
@@ -461,11 +461,11 @@ function wp_ezinearticles_help_view()
 	</p>
 	<ul>
 		<li>
-			<b><?php _e('Submit') ?></b>  - 
+			<b><?php _e('Submit') ?></b>  -
 			<?php _e('This submits your post to EzineArticles for review.  If there are any automatically detected issues with submission it will report them to you in the same way as validate.') ?>
 		</li>
 		<li>
-			<b><?php _e('Publish') ?></b> - 
+			<b><?php _e('Publish') ?></b> -
 			<?php _e('This publishes the post to your WordPress blog.') ?>
 		</li>
 	</ul>
@@ -485,10 +485,10 @@ function wp_ezinearticles_help_view()
 		<?php if(count($logged_events)): ?>
 		<div id="ezinearticles-send-event-log-details-wrap">
 			<input id="ezinearticles-send-event-log" name="ezinearticles_send_event_log" type="checkbox" checked="checked"> <b><?php _e('Send Event Log Information') ?></b> <a href="#" id="ezinearticles-send-event-log-detail-link"><?php _e('Show Details') ?></a><br>
-		
+
 			<div id="ezinearticles-send-event-log-details" style="display:none">
 				<p>
-					<?php _e('Below are some details we record while you are using the EzineArticles plugin. This information can help us investigate') ?> 
+					<?php _e('Below are some details we record while you are using the EzineArticles plugin. This information can help us investigate') ?>
 					<?php _e('problems that you may be having. If you do not wish to send along this information, simply uncheck the box next to the') ?>
 					<?php _e('"Send Event Log Information" checkbox.') ?>
 				</p>
@@ -523,7 +523,7 @@ function wp_ezinearticles_help_view()
 function wp_ezinearticles_post_meta_box()
 {
 	global $post, $wpdb;
-	
+
 	$article = null;
 	$excerpt = get_the_excerpt();
 
@@ -553,10 +553,10 @@ function wp_ezinearticles_post_meta_box()
 				}
 				$article = (object) $article;
 			}
-			elseif (isset($EzineArticle['error']) && 
+			elseif (isset($EzineArticle['error']) &&
 				(isset($EzineArticle['response_info']['status'])
 				&& $EzineArticle['response_info']['status'] == 200))
-			{	
+			{
 				$wpdb->query("DELETE FROM {$wpdb->prefix}ezinearticles_posts_to_articles WHERE post_id = '" . $post->ID . "'");
 				wp_ezinearticles_log_event( "API could not find article id $isEzineArticle. Deleted.", 'delete');
 			}
@@ -632,7 +632,7 @@ function wp_ezinearticles_get_primary_author()
 function wp_ezinearticles_get_logged_events()
 {
 	global $wpdb;
-	
+
 	$results = $wpdb->get_results("SELECT * FROM `{$wpdb->prefix}ezinearticles_diagnostic_log` WHERE `type` <> 'activate' ORDER BY `date` DESC LIMIT 10", ARRAY_A);
 	$install_version = $wpdb->get_results("SELECT * FROM `{$wpdb->prefix}ezinearticles_diagnostic_log` WHERE `type` = 'activate' ORDER BY `date` DESC LIMIT 4", ARRAY_A);
 
@@ -640,8 +640,8 @@ function wp_ezinearticles_get_logged_events()
 
 	if(!is_array($results))
 		return array();
-		
-	return $results;	
+
+	return $results;
 }
 
 //This gets the resource boxes for an author
@@ -728,7 +728,7 @@ function wp_ezinearticles_update_categories()
 	);
 
 	wp_ezinearticles_update_option('ezinearticles_categories', $ezinearticles_categories);
-	
+
 	return $categories;
 }
 
@@ -861,7 +861,7 @@ function wp_ezinearticles_install()
 }
 
 /**
- * returns null if all is ok, else return an error. 
+ * returns null if all is ok, else return an error.
  */
 function wp_ezinearticles_connection_test()
 {
@@ -897,22 +897,22 @@ function wp_ezinearticles_get_setup_info()
 	$output[] = " | WordPress URL: " . get_bloginfo('url');
 	$output[] = " | Email: " . $user_info['ea_email'];
 	$output[] = " | API Key: ". $user_info['ea_api_key'];
-	
+
 	if(isset($_SERVER['SERVER_ADDR']))
 	{
 		$output[] = " | Server IP: " . $_SERVER['SERVER_ADDR'];
 	}
-	
+
 	if(isset($_SERVER['SCRIPT_FILENAME']))
 	{
 		$output[] = " | Form: " . $_SERVER['SCRIPT_FILENAME'];
 	}
-	
+
 	if(isset($_SERVER['HTTP_USER_AGENT']))
 	{
 		$output[] = " | Browser: " . $_SERVER['HTTP_USER_AGENT'];
 	}
-	
+
 	if(isset($_ENV['HOSTNAME']))
 	{
 		$output[] = " | Host: " . $_ENV['HOSTNAME'];
@@ -922,7 +922,7 @@ function wp_ezinearticles_get_setup_info()
 	{
 		$plugins =  array();
 		$all_plugins = get_plugins();
-		
+
 		if(is_array($all_plugins) && count($all_plugins))
 		{
 			foreach($all_plugins as $plugin)
@@ -930,7 +930,7 @@ function wp_ezinearticles_get_setup_info()
 				$plugins[] = $plugin['Name'] . ' (' . $plugin['Version'] . ')';
 			}
 		}
-		
+
 		if(count($plugins))
 		{
 			$output[] = ' | Plugins Detected: ' . implode('; ', $plugins);
@@ -955,7 +955,7 @@ function wp_ezinearticles_version_check()
 
 //This logs an error
 function wp_ezinearticles_log_event($message, $type = 'error')
-{	
+{
 	global $wpdb;
 
 	$wpdb->insert( $wpdb->prefix.'ezinearticles_diagnostic_log', array('type' => $type, 'details' => $message, 'date' => date('Y-m-d H:i:s')) );
@@ -1190,11 +1190,11 @@ if(!$ea_account_status)
 	<a id="ea-resourcebox-options-edit" href="#ea-resourcebox-options"><?php _e('Customize') ?></a>
 	<div id="ea-resourcebox-options-wrap" style="display:none;">
 		<p class="howto"><?php _e('Enter Your Custom Resource Here') ?>:</p>
-		<textarea name="ea_resourcebox_text" id="ea-resourcebox-text"><?php 
+		<textarea name="ea_resourcebox_text" id="ea-resourcebox-text"><?php
 			if(isset($article))
 			{
 				_e( stripslashes($article->resource) );
-			} 
+			}
 		?></textarea><br />
 		<a id="ea-resourcebox-options-cancel" href="#"><?php _e('Close') ?></a>
 	</div>
@@ -1441,7 +1441,7 @@ function wp_ezinearticles_js()
 				$('#ezinearticles-custom-keywords-wrap').hide();
 			}
 		});
-		
+
 		$('#ea-resourcebox').change(function(){
 			update_resource();
 		});
@@ -1511,7 +1511,7 @@ function wp_ezinearticles_js()
 			}
 			return false;
 		});
-		
+
 		toggle_schedule();
 
 		// 0 = submit, 1 = validate only, 2 = save only
@@ -1525,9 +1525,9 @@ function wp_ezinearticles_js()
 
 			if (flag != 2)
 				autosave();
-			
+
 			toggle_buttons();
-			
+
 			if (!flag)
 				flag = 0;
 
@@ -1666,14 +1666,7 @@ function wp_ezinearticles_post_search($method, $with = null, $unfiltered = false
 	$post_query = array_merge( array('search'=>$method), (array)$with, wp_ezinearticles_common_vars($method));
 	$s = new Snoopy();
 	$s->submit('http://api.ezinearticles.com/api.php?', $post_query);
-	if(function_exists('iconv'))
-	{
-		$results = unserialize(iconv("UTF-8","ASCII//TRANSLIT",$s->results));
-	}
-	else
-	{
-		$results = unserialize($s->results);
-	}
+	$results = unserialize($s->results);
 	if ($unfiltered) return $results;
 	return (isset($results[$method])) ? $results[$method] : false;
 }
